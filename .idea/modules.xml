@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Application/Application.iml" filepath="$PROJECT_DIR$/Application/Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CordovaLib/CordovaLib.iml" filepath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CrosswalkDemo.iml" filepath="$PROJECT_DIR$/CrosswalkDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/XWalkCordovaLib/XWalkCordovaLib.iml" filepath="$PROJECT_DIR$/XWalkCordovaLib/XWalkCordovaLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xwalk_core_library/xwalk_core_library.iml" filepath="$PROJECT_DIR$/xwalk_core_library/xwalk_core_library.iml" />
+    </modules>
+  </component>
+</project>
+
