@@ -1,8 +1,6 @@
-CrossWalkAndroidStudio
-======================
+Native Crosswalk Authentication
+================================
 
-CrossWalk Project inside of Android Studio
+Crosswalk in Android Studio, with Cordova, using native auth.
 
-Example project for how to setup Crosswalk inside of Android Studio.
-
-Using Crosswalk version 10
+WIP
