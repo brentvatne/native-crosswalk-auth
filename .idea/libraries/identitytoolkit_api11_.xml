@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="identitytoolkit-api11-">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Application/build/intermediates/exploded-aar/identitytoolkit-api11/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/Application/build/intermediates/exploded-aar/identitytoolkit-api11/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

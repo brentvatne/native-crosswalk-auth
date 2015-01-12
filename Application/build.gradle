@@ -60,6 +60,13 @@ android {
 }
 
 
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
 
@@ -68,4 +75,6 @@ dependencies {
     armv7Compile project(':XWalkCordovaLib')
     // for speed, when doing dev, just go with normal cordova lib, speeds up build times by 50 seconds.
     smallCompile project(':CordovaLib')
+    compile 'com.google.android.gms:play-services:6.1.11'
+    compile(name: 'identitytoolkit-api11', ext: 'aar')
 }

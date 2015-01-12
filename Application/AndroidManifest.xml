@@ -17,32 +17,91 @@
        specific language governing permissions and limitations
        under the License.
 -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:windowSoftInputMode="adjustPan"
-      package="com.xwalk.androidstudio" android:versionName="1.0" android:versionCode="1" android:hardwareAccelerated="true">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xwalk.androidstudio"
+    android:hardwareAccelerated="true"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:windowSoftInputMode="adjustPan" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19" />
+
     <supports-screens
+        android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
-        android:smallScreens="true"
-        android:xlargeScreens="true"
         android:resizeable="true"
-        android:anyDensity="true"
-        />
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name"
-        android:hardwareAccelerated="true">
-        <activity android:name="XWalkCordova" android:label="@string/app_name" android:launchMode="singleTop"
-                android:theme="@android:style/Theme.Black.NoTitleBar"
-                android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale">
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="gitkit"
+                      android:scheme="-your-key-here-" />
+            </intent-filter>
         </activity>
+
+        <activity
+            android:name=".XWalkCordova"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="identitytoolkit.show_providers"
+            android:value="Google" />
+        <meta-data
+            android:name="identitytoolkit.use_google_plus"
+            android:value="true" />
+
+        <!-- Follow step 2: https://developers.google.com/identity-toolkit/quickstart/android#step_2_configure_the_google_identity_toolkit_api -->
+        <meta-data
+            android:name="identitytoolkit.api_key"
+            android:value="-your-api-key-here-" />
+        <meta-data
+            android:name="identitytoolkit.server_client_id"
+            android:value="-your-server-client-id-here-" />
+        <meta-data
+            android:name="identitytoolkit.server_widget_url"
+            android:value="http://localhost/" />
     </application>
 
-    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19"/>
-</manifest> 
+
+</manifest>

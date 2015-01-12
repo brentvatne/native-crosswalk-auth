@@ -19,8 +19,10 @@
 
 package com.xwalk.androidstudio;
 
+import android.content.Intent;
 import android.os.Bundle;
-import org.apache.cordova.*;
+
+import org.apache.cordova.CordovaActivity;
 
 public class XWalkCordova extends CordovaActivity 
 {
@@ -29,9 +31,12 @@ public class XWalkCordova extends CordovaActivity
     {
         super.onCreate(savedInstanceState);
         super.init();
+
+        Intent intent = getIntent();
+        String token = intent.getStringExtra(LoginActivity.TOKEN_MESSAGE);
         // Set by <content src="index.html" /> in config.xml
-        super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///android_asset/www/index.html");
+//        super.loadUrl(Config.getStartUrl());
+        super.loadUrl("file:///android_asset/www/index.html?token=" + token);
     }
 }
 
